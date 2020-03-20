@@ -116,7 +116,7 @@ export default function App() {
   };
 
   const answerCall = ({callUUID}) => {
-    const number = calls[callUUID];
+    const number = calls[callUUID] || '1234567890';
     log(`[answerCall] ${format(callUUID)}, number: ${number}`);
 
     RNCallKeep.startCall(callUUID, number, number);
