@@ -58,6 +58,7 @@
 		2D02E4901E0B4A5D006451C7 /* patchvoip-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "patchvoip-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2E169D2424F4DF00568710 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		2D2E169F2424F4F400568710 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		2D2E16A12424FCDD00568710 /* patchvoip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = patchvoip.entitlements; path = patchvoip/patchvoip.entitlements; sourceTree = "<group>"; };
 		7B67405198BD119DC20942A7 /* libPods-patchvoip-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-patchvoip-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CD6ACECC299B103BF20FC3 /* Pods-patchvoip-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patchvoip-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-patchvoip-tvOSTests/Pods-patchvoip-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		86A81AC5704D91AE50C2DB09 /* Pods-patchvoipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-patchvoipTests.debug.xcconfig"; path = "Target Support Files/Pods-patchvoipTests/Pods-patchvoipTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		13B07FAE1A68108700A75B9A /* patchvoip */ = {
 			isa = PBXGroup;
 			children = (
+				2D2E16A12424FCDD00568710 /* patchvoip.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -634,6 +636,7 @@
 			baseConfigurationReference = BEE95AB79180E7FEF0944E72 /* Pods-patchvoip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = patchvoip/patchvoip.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
@@ -676,6 +679,7 @@
 			baseConfigurationReference = 988938A6883F9C6CC1862458 /* Pods-patchvoip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = patchvoip/patchvoip.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

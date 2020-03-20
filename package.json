@@ -16,7 +16,8 @@
     "react-native-background-timer": "^2.2.0",
     "react-native-callkeep": "^3.0.10",
     "react-native-device-info": "^5.5.3",
-    "react-native-uuid": "^1.4.9"
+    "react-native-uuid": "^1.4.9",
+    "react-native-voip-push-notification": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

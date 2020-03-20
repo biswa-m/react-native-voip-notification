@@ -5106,6 +5106,11 @@ react-native-uuid@^1.4.9:
   dependencies:
     randombytes "^2.0.3"
 
+react-native-voip-push-notification@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-voip-push-notification/-/react-native-voip-push-notification-2.0.0.tgz#2d2bf6d55503ac9eaedc30610945931ce5b68201"
+  integrity sha512-CwRvZWjcTULXLIRrd7wlx7czIPQ3GoPbryoyr6ZGFxSRXtTy0YSogTkyVzpiULFe8jdlP46UKmeZI+Gj2V1ugA==
+
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"

@@ -223,6 +223,8 @@ PODS:
     - React
   - RNDeviceInfo (5.5.3):
     - React
+  - RNVoipPushNotification (2.0.0):
+    - React-Core
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -256,6 +258,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNCallKeep (from `../node_modules/react-native-callkeep`)
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
+  - RNVoipPushNotification (from `../node_modules/react-native-voip-push-notification`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -317,6 +320,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-callkeep"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
+  RNVoipPushNotification:
+    :path: "../node_modules/react-native-voip-push-notification"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -349,6 +354,7 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNCallKeep: 26b7f999575c42d6e325a89368a7157c0f3f2be6
   RNDeviceInfo: 310c1f43d418d950a193c7650de2f9559c906048
+  RNVoipPushNotification: 065208b32273ba5901ae0f102b2d28a11e0a0373
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: ada28b1082e1c789123c00caf07ad79fcdc7bf92

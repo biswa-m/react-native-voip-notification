@@ -11,6 +11,7 @@ import {v4 as uuidv4} from 'react-native-uuid';
 import RNCallKeep from 'react-native-callkeep';
 import BackgroundTimer from 'react-native-background-timer';
 import DeviceInfo from 'react-native-device-info';
+import VoipPushNotification from 'react-native-voip-push-notification';
 
 BackgroundTimer.start();
 
@@ -232,6 +233,8 @@ export default function App() {
     );
     RNCallKeep.addEventListener('endCall', endCall);
 
+    handleVoip();
+
     return () => {
       RNCallKeep.removeEventListener('answerCall', answerCall);
       RNCallKeep.removeEventListener(
@@ -253,6 +256,54 @@ export default function App() {
       RNCallKeep.removeEventListener('endCall', endCall);
     };
   }, []);
+
+  const handleVoip = () => {
+    // or anywhere which is most comfortable and appropriate for you
+    VoipPushNotification.requestPermissions(); // --- optional, you can use another library to request permissions
+    VoipPushNotification.registerVoipToken(); // --- required
+
+    VoipPushNotification.addEventListener('register', token => {
+      console.warn('VOIP Token: ', token);
+      // --- send token to your apn provider server
+    });
+
+    VoipPushNotification.addEventListener('localNotification', notification => {
+      console.warn('Local notification clicked ', notification);
+      // --- when user click local push
+    });
+
+    VoipPushNotification.addEventListener('notification', notification => {
+      console.warn('Notification received: ', notification);
+      // --- when receive remote voip push, register your VoIP client, show local notification ... etc
+      //this.doRegisterOrSomething();
+
+      // --- This  is a boolean constant exported by this module
+      // --- you can use this constant to distinguish the app is launched by VoIP push notification or not
+      if (VoipPushNotification.wakeupByPush) {
+        console.warn('waked up by VOIP');
+        // this.doSomething()
+
+        // --- remember to set this static variable back to false
+        // --- since the constant are exported only at initialization time, and it will keep the same in the whole app
+        VoipPushNotification.wakeupByPush = false;
+      }
+
+      /**
+       * Local Notification Payload
+       *
+       * - `alertBody` : The message displayed in the notification alert.
+       * - `alertAction` : The "action" displayed beneath an actionable notification. Defaults to "view";
+       * - `soundName` : The sound played when the notification is fired (optional).
+       * - `category`  : The category of this notification, required for actionable notifications (optional).
+       * - `userInfo`  : An optional object containing additional notification data.
+       */
+      console.warn('Presenting local notification ');
+
+      VoipPushNotification.presentLocalNotification({
+        alertBody: 'hello! ' + notification.getMessage(),
+      });
+    });
+  };
 
   // if (isIOS && DeviceInfo.isEmulator()) {
   //   return (
