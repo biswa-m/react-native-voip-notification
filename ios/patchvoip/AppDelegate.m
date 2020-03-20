@@ -14,6 +14,7 @@
 
 #import <PushKit/PushKit.h>
 #import "RNVoipPushNotificationManager.h"
+#import <os/log.h>
 
 @implementation AppDelegate
 
@@ -47,6 +48,8 @@
  continueUserActivity:(NSUserActivity *)userActivity
    restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler
  {
+   
+   os_log(os_log_create("org.reactjs.native.example.patchvoip", "myapp"), "Callkeep init 1");
    return [RNCallKeep application:application
             continueUserActivity:userActivity
               restorationHandler:restorationHandler];
